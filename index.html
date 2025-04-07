@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Countdown Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Event Countdown</h1>
+            <p>Never miss an important event again!</p>
+        </header>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-wrapper">
+            <div id="countdownDisplay" class="countdown"></div>
+            <div id="eventMessage" class="event-message"></div>
+        </div>
+
+        <!-- Menu and Floating Action Button -->
+        <div id="floatingMenu">
+            <button id="menuButton" onclick="toggleMenu()">☰</button>
+        </div>
+
+        <!-- Menu -->
+        <div id="menu" class="menu">
+            <ul>
+                <li><button onclick="toggleAddEventModal()">Add Event</button></li>
+                <li><button onclick="resetTimer()">Reset Timer</button></li>
+                <li><button onclick="toggleSound()">Toggle Sound</button></li>
+                <li><button onclick="changeBackgroundColor()">Change Background</button></li>
+                <li class="btn"><button onclick=" listEvents();">List Events</button></li>
+            </ul>
+        </div>
+
+        <!-- Add Event Modal -->
+        <div id="addEventModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeAddEventModal()">&times;</span>
+                <h2>Add New Event</h2>
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" placeholder="Event Name" required />
+                <label for="eventDate">Event Date:</label>
+                <input type="datetime-local" id="eventDate" required />
+                <button onclick="saveEvent()">Save Event</button>
+            </div>
+        </div>
+
+
+
+        <!-- List of Events -->
+        <div id="eventsList" class="events-list" style="display:none;" >
+            <h2>Upcoming Events</h2>
+            <ul id="eventListItems"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
